@@ -17,7 +17,7 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/loginEmail"
+            android:id="@+id/loginEtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -28,7 +28,7 @@
             android:textSize="24sp" />
 
         <EditText
-            android:id="@+id/loginPassword"
+            android:id="@+id/loginEtPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -52,7 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/ThemeOverlay.AppCompat.Dark"
-            android:background="@drawable/button"
+            android:background="@drawable/btn_login"
             android:text="@string/login_button_text" />
 
     </LinearLayout>
