@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "715405686041",
+    "firebase_url": "https://online-talk-d64fc.firebaseio.com",
+    "project_id": "online-talk-d64fc",
+    "storage_bucket": "online-talk-d64fc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:715405686041:android:16e96816c6e1126d0f0188",
+        "android_client_info": {
+          "package_name": "tw.com.cronus.onlinetalk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "715405686041-b9qt9n44ev1j3t7ehaf153knjnuc18h5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tw.com.cronus.onlinetalk",
+            "certificate_hash": "39137dfaaa56a94eecb791d66b30d19150f80a1b"
+          }
+        },
+        {
+          "client_id": "715405686041-7dpv5mgvlddg1qlttqr6qbrpnsd0o6t2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7smo_qGYte-YhIDXS5Z2Tpkzu6QXEb3g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "715405686041-7dpv5mgvlddg1qlttqr6qbrpnsd0o6t2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
