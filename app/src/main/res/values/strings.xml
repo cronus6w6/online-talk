@@ -3,5 +3,7 @@
     <string name="login_email_hint">E-mail信箱</string>
     <string name="login_password_hint">密碼</string>
     <string name="login_button_text">登入</string>
-    <string name="forgot_password">忘記密碼?</string>
+    <string name="login_forgot_password">忘記密碼</string>
+    <string name="login_sign_up"><u>註冊</u></string>
+    <string name="or">|</string>
 </resources>
