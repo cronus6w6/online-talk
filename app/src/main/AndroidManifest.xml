@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="tw.com.cronus.onlineTalk.SignIn" />
+        <activity android:name="tw.com.cronus.onlineTalk.SignUp" />
         <activity android:name="tw.com.cronus.onlineTalk.Login" />
         <activity android:name="tw.com.cronus.onlineTalk.StartPage">
             <intent-filter>
