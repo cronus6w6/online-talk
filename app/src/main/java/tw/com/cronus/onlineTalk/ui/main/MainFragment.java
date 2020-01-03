@@ -1,4 +1,4 @@
-package tw.com.cronus.onlinetalk.ui.main;
+package tw.com.cronus.onlineTalk.ui.main;
 
 import androidx.lifecycle.ViewModelProviders;
 
@@ -12,7 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import tw.com.cronus.onlinetalk.R;
+import tw.com.cronus.onlineTalk.R;
 
 public class MainFragment extends Fragment {
 
