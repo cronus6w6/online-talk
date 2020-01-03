@@ -1,4 +1,4 @@
-package tw.com.cronus.onlinetalk;
+package tw.com.cronus.onlineTalk;
 
 import org.junit.Test;
 
