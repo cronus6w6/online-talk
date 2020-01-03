@@ -1,4 +1,4 @@
-package tw.com.cronus.onlinetalk;
+package tw.com.cronus.onlineTalk;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;

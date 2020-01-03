@@ -1,10 +1,10 @@
-package tw.com.cronus.onlinetalk;
+package tw.com.cronus.onlineTalk;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import tw.com.cronus.onlinetalk.ui.main.MainFragment;
+import tw.com.cronus.onlineTalk.ui.main.MainFragment;
 
 public class MainActivity extends AppCompatActivity {
 
