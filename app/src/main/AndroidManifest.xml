@@ -13,8 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="tw.com.cronus.onlineTalk.SignUp" />
-        <activity android:name="tw.com.cronus.onlineTalk.Login" />
+        <activity android:name="tw.com.cronus.onlineTalk.SignUp"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name="tw.com.cronus.onlineTalk.Login"
+            android:windowSoftInputMode="adjustResize" />
         <activity android:name="tw.com.cronus.onlineTalk.StartPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
