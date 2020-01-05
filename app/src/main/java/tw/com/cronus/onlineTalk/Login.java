@@ -1,12 +1,12 @@
 package tw.com.cronus.onlineTalk;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
-import android.widget.Button;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -19,27 +19,16 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         mAuth = FirebaseAuth.getInstance();
         final EditText sEtEmail = findViewById(R.id.loginEtEmail);
-        sEtEmail.addTextChangedListener(new TextWatcher() {
+        InputChecker.EmailCheck(sEtEmail);
+        final TextView sTvSignUp = findViewById(R.id.loginTvSignIn);
+        sTvSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {
-
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(Login.this, SignUp.class);
+                startActivity(intent);
             }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
-                if (charSequence.length() == 0) return;
-                if (!charSequence.toString().matches(getString(R.string.regexEmail)))
-                    sEtEmail.setError("Email不符合格式!!!");
-            }
-        });     //email格式判斷
-
-        final Button sBtnLogin = findViewById(R.id.loginLoginBtn);
-
+        });
     }
 
     @Override
