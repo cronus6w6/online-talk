@@ -1,11 +1,13 @@
 package tw.com.cronus.onlineTalk;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,11 +23,23 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 public class SignUp extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private final String TAG = "SignUp";
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == android.R.id.home) finish();
+        return super.onOptionsItemSelected(item);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         mAuth = FirebaseAuth.getInstance();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
+        ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
+
         final EditText sEtAccount = findViewById(R.id.SignUpAccount);
         InputChecker.AccountCheck(sEtAccount);
 
@@ -55,12 +69,16 @@ public class SignUp extends AppCompatActivity {
                 if(sEtEmail.getError() != null) return;
                 if(sEtPassword.getError() != null) return;
                 if(sEtConfirmPassword.getError() != null) return;
+                sEtAccount.clearFocus();
+                sEtEmail.clearFocus();
+                sEtPassword.clearFocus();
+                sEtConfirmPassword.clearFocus();
                 dialog.show();
                 mAuth.createUserWithEmailAndPassword(sEtEmail.getText().toString(), sEtPassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()) {
-                            FirebaseUser user = mAuth.getCurrentUser();
+                            final FirebaseUser user = mAuth.getCurrentUser();
                             if(user != null) {
                                 UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder()
                                         .setDisplayName(sEtAccount.getText().toString()).build();
@@ -70,7 +88,8 @@ public class SignUp extends AppCompatActivity {
                                             public void onComplete(@NonNull Task<Void> task) {
                                                 dialog.cancel();
                                                 if(task.isSuccessful()) {
-                                                    Toast.makeText(SignUp.this, "Create successful", Toast.LENGTH_SHORT).show();
+
+                                                    Toast.makeText(SignUp.this, "Create successful: " + user.getDisplayName(), Toast.LENGTH_SHORT).show();
                                                 }
                                                 else {
                                                     Toast.makeText(SignUp.this, "Error: " + task.getException(), Toast.LENGTH_SHORT).show();
